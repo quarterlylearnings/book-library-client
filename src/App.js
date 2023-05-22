@@ -4,6 +4,7 @@ import ShelfList from './ShelfList';
 import BookList from './BookList';
 import LibraryForm from './LibraryForm';
 import ShelfForm from './ShelfForm';
+import BookForm from './BookForm';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/libraries/:libraryId/shelves" element={<ShelfList />} />
         <Route path="/libraries/:libraryId/shelves/new" element={<ShelfForm />} />
         <Route path="/shelves/:shelfId/books" element={<BookList />} />
+        <Route path="/shelves/:shelfId/books/new" element={<BookForm />} />
       </Routes>
     </BrowserRouter>
   );
