@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { ListGroup } from 'react-bootstrap';
 
 function ShelfList() {
@@ -15,7 +15,10 @@ function ShelfList() {
   return (
     <ListGroup>
       {shelves.map(shelf => (
-        <ListGroup.Item key={shelf.id}>{shelf.genre}</ListGroup.Item>
+        <ListGroup.Item key={shelf.id}>
+          {shelf.genre}
+          <Link to={`/shelves/${shelf.id}/books`}>View Books</Link>
+        </ListGroup.Item>
       ))}
     </ListGroup>
   );
