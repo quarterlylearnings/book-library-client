@@ -17,7 +17,7 @@ function LibraryList() {
       {libraries.map(library => (
         <ListGroup.Item key={library.id}>
           {library.name}
-          <Link to={`/libraries/${library.id}`}>View Shelves</Link>
+          <Link to={`/libraries/${library.id}/shelves`}>View Shelves</Link>
         </ListGroup.Item>
       ))}
     </ListGroup>
