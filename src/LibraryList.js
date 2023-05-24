@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react';
-import { ListGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Col, Container, ListGroup, Row, Stack } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LibraryList() {
   const [libraries, setLibraries] = useState([]);
+
+  const navigate = useNavigate();
+
+  const addLibrary = () => {
+    navigate('/libraries/new')
+  }
 
   useEffect(() => {
     console.log(process.env.REACT_APP_API_BASE_URL)
@@ -13,15 +19,24 @@ function LibraryList() {
   }, []);
 
   return (
-    <ListGroup>
-      {libraries.map(library => (
-        <ListGroup.Item key={library.id}>
-          {library.name}
-          <Link to={`/libraries/${library.id}/shelves`}>View Shelves</Link>
-        </ListGroup.Item>
-      ))}
-    </ListGroup>
-  );
+  <Container>
+    <Stack gap={2}>
+      <ListGroup>
+        {libraries.map(library => (
+          <ListGroup.Item key={library.id}>
+            {library.name}
+            <Link to={`/libraries/${library.id}/shelves`}>View Shelves</Link>
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
+      <Row>
+        <Col xs={{offset:10}}>
+          <Button onClick={addLibrary}>+</Button>
+        </Col>
+      </Row>
+    </Stack>
+  </Container>
+  );  
 }
 
 export default LibraryList;
