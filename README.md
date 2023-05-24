@@ -22,7 +22,7 @@ This application is built for individuals or organizations looking to manage a b
 The application will start on http://localhost:3000.
 
 ## Deployed Application
-You can access the deployed application at: https://cor-tech-library.onrender.com
+You can access the deployed application at: https://cor-book-library.onrender.com/
 
 ## Application Flow and Wireframes
 
